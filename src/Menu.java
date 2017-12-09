@@ -38,15 +38,6 @@ public class Menu implements Observer{
 		
 	}
 
-	/**
-	 * TODO make this crap
-	 * The delete method is to be passed an iterator pointing to the MenuItem to
-	 * be deleted.
-	 */
-	public void delete(MenuIterator iter) {
-	
-
-	}
 
 	/** Iterates over all of the items on the menu */
 	private class AllItemsIterator implements MenuIterator {
@@ -187,9 +178,7 @@ public class Menu implements Observer{
 		itr = new PriceIterator(0, price);
 		return itr;
 	}
-	public void getAll(){
-		
-	}
+
 
 	@Override
 	public void handleEvent(int i) {

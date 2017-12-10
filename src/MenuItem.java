@@ -24,6 +24,11 @@ public class MenuItem {
 	}
 
 	public String getPrice() {
+		if((Context.getInstance().getState()) instanceof DiscountPrice){
+			double k = (double)(Double.parseDouble(price)*(60.0f/100.0f));
+			return Double.toString(k);
+			}
+		
 		return price;
 	}
 	public int getCat(){

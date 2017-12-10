@@ -1,8 +1,12 @@
+
+import java.util.Calendar;
 import java.util.Scanner;
+
+import com.sun.javafx.css.CompoundSelector;
 
 import Exceptions.Exceptions.InsufficientSizeArrayException;
 
-public class SystemInterface {
+public class SystemInterface{
 	  private static Invoker invoker;
 	  private static Menu men;
 	 
@@ -20,6 +24,20 @@ public class SystemInterface {
 	    
 	    public static void runner(){
 	    	Scanner scan = new Scanner(System.in);
+	    	
+	    	Calendar now= Calendar.getInstance();
+	    	int hour = now.get(Calendar.HOUR_OF_DAY);
+	        
+	    	if (hour==10 || hour==12 || hour==11){
+	    		DiscountPrice p=new DiscountPrice();
+	    		p.doAction(Context.getInstance());
+	    	} else{
+	    		NormalPrice norm=new NormalPrice();
+	    		norm.doAction(Context.getInstance());
+	    	}
+	    	
+	    	
+	        
 			System.out.println("Welcome!");
 			while (true){
 				System.out.println("Press 1 to  display all menu items");
@@ -58,6 +76,8 @@ public class SystemInterface {
 	    	   	
 	    	
 	    }
+	    
+	    
 	   
 	  
 

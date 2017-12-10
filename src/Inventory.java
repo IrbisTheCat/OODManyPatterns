@@ -1,7 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Inventory implements Observable{
 	private int [] amounts= {5,3,10,1,20,5,1,9,7,23};
+	
+		
+	
+	
 	ArrayList <Observer> observers;
 	
 	private static final Inventory INS= new Inventory();
@@ -9,6 +14,7 @@ public class Inventory implements Observable{
 	public static Inventory getInstance(){
 		return INS;
 	}
+	
 	
 	private Inventory(){
 		observers=new ArrayList <Observer> ();
